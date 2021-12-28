@@ -113,10 +113,10 @@ export const GameCalc = ({boardArray, setArray, playerTurn, setScoreOne, setScor
     
     
     return (
-        <div>
+        <div2>
             <h2 className='announceWinner'></h2> 
             {nextRound}
-        </div>
+        </div2>
     )
 }
 

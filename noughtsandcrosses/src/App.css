@@ -11,9 +11,10 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
+  margin: auto;
+  justify-content: center;
   width: 8cm;
   height: 8cm;
-  margin-left: 13.5cm;
 }
 
 #topleft, #topmiddle, #topright,
@@ -34,6 +35,18 @@ h1 {
   font-family: 'Shadows Into Light', cursive;
 }
 
+div2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: auto;
+  justify-content: center;
+  width: 5cm;
+  text-align: center;
+  padding-left: 1cm;
+}
+
 .announceWinner {
   align-items: center;
   text-align: center;
@@ -45,6 +58,7 @@ h1 {
   font-family: 'Shadows Into Light', cursive;
   background-color: azure;
   border-style: hidden;
-  margin-left: 14.8cm;
+  margin: auto;
+  justify-content: center;
   font-size: 1cm;
 }
