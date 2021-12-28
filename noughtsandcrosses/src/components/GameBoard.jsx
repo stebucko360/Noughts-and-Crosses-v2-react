@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { checkWinner } from './Game-calc';
 
 export const GameBoard = ({setArray, setplayerTurn, playerTurn}) => {
     
@@ -15,6 +16,7 @@ export const GameBoard = ({setArray, setplayerTurn, playerTurn}) => {
                     currPlayer = 2
                     return currPlayer;
                 })
+                checkWinner(newArray, playerTurn)
                 return newArray;
             } else {
                 newArray[indexOne][indexTwo] = 'O'
@@ -23,6 +25,7 @@ export const GameBoard = ({setArray, setplayerTurn, playerTurn}) => {
                     currPlayer = 1
                     return currPlayer;
                 })
+                checkWinner(newArray, playerTurn)
                 return newArray;
             }
 
