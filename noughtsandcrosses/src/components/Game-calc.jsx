@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
 let winnerScoreIncrease = 0;
+let counter = 0;
 
 export const checkWinner = (boardArray, playerTurn)=>{
     const winner = document.getElementsByClassName('announceWinner');
@@ -8,6 +9,7 @@ export const checkWinner = (boardArray, playerTurn)=>{
     for (let index of boardArray) {
         if(index[0] === index[1] && index[0] === index[2] && index[0] !== 0){
             winner[0].innerText = `Player ${playerTurn} wins this round`
+            winnerScoreIncrease = playerTurn
         }; 
     //check columns
     };
@@ -36,7 +38,7 @@ export const checkWinner = (boardArray, playerTurn)=>{
 };
 
 export const GameCalc = ({boardArray, setArray, playerTurn, setScoreOne, setScoreTwo}) => {
-    
+
     const [nextRound, setnextRound] = useState()
 
     const resetRound = () => {

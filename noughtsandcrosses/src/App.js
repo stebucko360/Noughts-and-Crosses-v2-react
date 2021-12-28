@@ -10,7 +10,7 @@ function App() {
   const [playerTurn, setplayerTurn] = useState(1)
   const [playerOneScore, setScoreOne] = useState(0)
   const [playerTwoScore, setScoreTwo] = useState(0)
-console.log(boardArray)
+
   return (
     <>
     <GameBoard setArray={setArray} setplayerTurn={setplayerTurn} playerTurn={playerTurn}/>
