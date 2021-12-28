@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Shizuru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
-/*Gameboard*/
-
+h1 {
+  align-content: center;
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+}
 .gameboard {
   display: flex;
   flex-direction: row;
@@ -8,6 +13,7 @@
   align-content: flex-start;
   width: 8cm;
   height: 8cm;
+  margin-left: 13.5cm;
 }
 
 #topleft, #topmiddle, #topright,
@@ -15,4 +21,30 @@
 #bottomleft, #bottommiddle, #bottomright {
   width: 30%;
   height: 30%;
+  background-color: azure;
+  font-family: 'Shizuru', cursive;
+  font-size: 1.5cm;
+  border-style: dotted;
 } 
+
+.scoreboard {
+  align-items: center;
+  text-align: center;
+  font-size: 0.5cm;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.announceWinner {
+  align-items: center;
+  text-align: center;
+  font-size: 0.5cm;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+#nextRoundButton {
+  font-family: 'Shadows Into Light', cursive;
+  background-color: azure;
+  border-style: hidden;
+  margin-left: 14.8cm;
+  font-size: 1cm;
+}
