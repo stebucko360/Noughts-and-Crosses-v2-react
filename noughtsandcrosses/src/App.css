@@ -1,0 +1,18 @@
+
+/*Gameboard*/
+
+.gameboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 8cm;
+  height: 8cm;
+}
+
+#topleft, #topmiddle, #topright,
+#middleleft, #middle, #middleright,
+#bottomleft, #bottommiddle, #bottomright {
+  width: 30%;
+  height: 30%;
+} 
