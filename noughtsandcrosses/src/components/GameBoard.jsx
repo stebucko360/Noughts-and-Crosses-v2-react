@@ -1,11 +1,14 @@
 import React from 'react'
-import { useState } from 'react';
 import { checkWinner } from './Game-calc';
 
-export const GameBoard = ({setArray, setplayerTurn, playerTurn}) => {
+export const GameBoard = ({setArray, setplayerTurn, playerTurn, setRoundCount, roundCount}) => {
     
     const setBoard = (boardLocation ,indexOne, indexTwo) => {
         const changeButton = document.getElementById(boardLocation);
+        setRoundCount((currValue)=>{
+            currValue++
+            return currValue
+        });
 
         setArray((currArray)=>{
             const newArray = [...currArray];
@@ -16,7 +19,7 @@ export const GameBoard = ({setArray, setplayerTurn, playerTurn}) => {
                     currPlayer = 2
                     return currPlayer;
                 })
-                checkWinner(newArray, playerTurn)
+                checkWinner(newArray, playerTurn, roundCount)
                 return newArray;
             } else {
                 newArray[indexOne][indexTwo] = 'O'
@@ -25,11 +28,11 @@ export const GameBoard = ({setArray, setplayerTurn, playerTurn}) => {
                     currPlayer = 1
                     return currPlayer;
                 })
-                checkWinner(newArray, playerTurn)
+                checkWinner(newArray, playerTurn, roundCount)
                 return newArray;
             }
 
-        })
+        });
     };
 
     return (
