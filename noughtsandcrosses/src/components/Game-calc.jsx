@@ -1,4 +1,5 @@
 import React from 'react'
+import {useState} from 'react';
 let winnerScoreIncrease = 0;
 
 export const checkWinner = (boardArray, playerTurn)=>{
@@ -34,26 +35,61 @@ export const checkWinner = (boardArray, playerTurn)=>{
     
 };
 
-export const GameCalc = ({boardArray, playerTurn, setScoreOne, setScoreTwo}) => {
+export const GameCalc = ({boardArray, setArray, playerTurn, setScoreOne, setScoreTwo}) => {
+    
+    const [nextRound, setnextRound] = useState()
 
-if (winnerScoreIncrease === 1) {
-    winnerScoreIncrease = 0;
-    setScoreOne((currentScore)=>{
-        currentScore = (currentScore + 1)
-        return currentScore;
-    });
-};
-if (winnerScoreIncrease === 2) {
-    winnerScoreIncrease = 0;
-    setScoreTwo((currentScore)=>{
-        currentScore = (currentScore + 1)
-        return currentScore;
-    });
-};
+    const resetRound = () => {
+        const winner = document.getElementsByClassName('announceWinner');
+        winner[0].innerText = '';
+        const buttonLocations = ['topleft', 'topmiddle', 'topright', 'middleleft', 'middle', 'middleright', 'bottomleft', 'bottommiddle', 'bottomright'];
+
+        for(let id of buttonLocations) {
+            const changeButton = document.getElementById(id);
+            changeButton.innerText = '-';
+        };
+
+        setArray((currentArray)=>{
+            let newArray = [...currentArray];
+            newArray = [[0, 0, 0],[0, 0, 0],[0, 0, 0]]
+            return newArray;
+        });
+        setnextRound((currentValue)=>{
+            currentValue = null;
+            return currentValue
+        });
+    };
+
+    let nextRoundButton = <button id='nextRoundButton' onClick={()=>{resetRound()}}>Next Round</button>
+
+    if (winnerScoreIncrease === 1) {
+        winnerScoreIncrease = 0;
+        setScoreOne((currentScore)=>{
+            currentScore = (currentScore + 1)
+            setnextRound((currentValue)=>{
+                currentValue = nextRoundButton
+                return currentValue;
+            });
+            return currentScore;
+        });
+    };
+    if (winnerScoreIncrease === 2) {
+        winnerScoreIncrease = 0;
+        setScoreTwo((currentScore)=>{
+            currentScore = (currentScore + 1)
+            setnextRound((currentValue)=>{
+                currentValue = nextRoundButton
+                return currentValue;
+            });
+            return currentScore;
+        });
+    };
 
     return (
         <div>
-            <h2 className='announceWinner'></h2>
+            <h2 className='announceWinner'></h2> 
+            {nextRound}
         </div>
     )
 }
+
