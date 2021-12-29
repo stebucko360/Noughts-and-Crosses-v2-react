@@ -22,7 +22,7 @@ h1 {
 #bottomleft, #bottommiddle, #bottomright {
   width: 30%;
   height: 30%;
-  background-color: azure;
+  background-color: white;
   font-family: 'Shizuru', cursive;
   font-size: 1.5cm;
   border-style: dotted;
@@ -56,7 +56,7 @@ div2 {
 
 #nextRoundButton {
   font-family: 'Shadows Into Light', cursive;
-  background-color: azure;
+  background-color: white;
   border-style: hidden;
   margin: auto;
   justify-content: center;

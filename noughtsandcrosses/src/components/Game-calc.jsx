@@ -11,6 +11,7 @@ export const checkWinner = (boardArray, playerTurn, roundCount)=>{
         if(index[0] === index[1] && index[0] === index[2] && index[0] !== 0){
             winner[0].innerText = `Player ${playerTurn} wins this round`
             winnerScoreIncrease = playerTurn
+            isWinner = true;
         }; 
     //check columns
     };
